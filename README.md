@@ -52,8 +52,19 @@ cal_min        0.0000
 file_type      NIFTI-1+
 ```
 
-### Step 3: Pull your image on Docker Hub
+### Step 3: Push your image to Docker Hub
 
 The final step consists of sharing your image in [Docker Hub](https://hub.docker.com/) to let other users download and use it. If you don't have a Docker Hub ID, you can create one here: https://hub.docker.com/signup.
 
-* Next, create your first repository. Login in with your Docker Hub ID and push the button 'Create Repository'. Type the repository name as 'fsl'.
+* Now it's time to create your repository. Login in with your Docker Hub ID and push the button 'Create Repository'. Type the repository name as 'fsl'.
+
+* Name you image like ```<YourDockerHubID>/RepositoryName:RepositoryTag```. From a terminal run the following:
+```
+docker tag fsl:5.0 <YourDockerHubID>/fsl:5.0
+```
+* Login with you Docker Hub ID also from the terminal, by typing ```docker login``` and inserting your credentials.
+
+* Push your image to Docker Hub by running the following command:
+```
+docker push <YourDockerHubID>/fsl:5.0
+```
