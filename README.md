@@ -28,7 +28,7 @@ This message shows that your installation appears to be working correctly.
 ```
 docker build --tag fsl:5.0 .
 ```
-* (Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replcae ```/absolute/path/to/directory``` with your actual absolute path):
+* Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replcae ```/absolute/path/to/directory``` with your actual absolute path):
 ```
 docker run --rm -v /absolute/path/to/directory/docker-tutorial:/workdir -t fsl:5.0 /workdir/test
 ```
@@ -51,4 +51,5 @@ cal_max        0.0000
 cal_min        0.0000
 file_type      NIFTI-1+
 ```
-)
+
+### Step 3: Pull your image on Docker Hub
