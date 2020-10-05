@@ -5,14 +5,14 @@ This simple tutorial is inspired by https://docs.docker.com/get-started/. Please
 
 ### Step 1: Install docker
 
-If docker isn't already installed on your machine, plese refer to this guidelines to install it: https://docs.docker.com/engine/install/.
+If docker isn't already installed on your machine, plese refer to these guidelines to install it: https://docs.docker.com/engine/install/.
 
-To chek whether docker is correctly installed, from a terminal run ```docker --version``` (you need root permission, type ```sudo su``` to login as root).
+To chek if docker is correctly installed, from a terminal run ```docker --version``` (you need root permission, type ```sudo su``` to login as root).
 ```
 $ docker --version
 Docker version 19.03.13, build 4484c46d9d 
 ```
-To test wheter you installation works, from a terminal run ```docker run hello-world```.
+To test if your installation works, from a terminal run ```docker run hello-world```.
 ```
 $docker run hello-world
 
