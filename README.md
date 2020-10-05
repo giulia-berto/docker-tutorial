@@ -22,13 +22,13 @@ This message shows that your installation appears to be working correctly.
 
 ### Step 2: Build and run your image
 
-- Git clone this repository on your machine ```git clone git@github.com:giulia-berto/docker-tutorial.git``` and move inside the docker-tutorial directory ```cd docker-tutorial```.
+* Git clone this repository on your machine ```git clone git@github.com:giulia-berto/docker-tutorial.git``` and move inside the docker-tutorial directory ```cd docker-tutorial```.
 
-- The Dockerfile contains the instructions to create the container. To have a working container, you need first to build the fsl image by running the following command:
+* The Dockerfile contains the instructions to create the container. To have a working container, you need first to build the fsl image by running the following command:
 ```
 docker build --tag fsl:5.0 .
 ```
-- Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replcae ```/absolute/path/to/directory``` with your actual absolute path):
+* Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replcae ```/absolute/path/to/directory``` with your actual absolute path):
 ```
 docker run --rm -v /absolute/path/to/directory/docker-tutorial:/workdir -t fsl:5.0 /workdir/test
 ```
