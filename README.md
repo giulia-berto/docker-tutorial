@@ -1,5 +1,5 @@
 # docker-tutorial
-Docker tutorial to build an FSL container.
+Docker tutorial to build an [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) container.
 
 This simple tutorial is inspired by https://docs.docker.com/get-started/. Please refer to that resource for a more comprehensive documentation.
 
@@ -24,4 +24,6 @@ This message shows that your installation appears to be working correctly.
 
 - Git clone this repository on your machine ```git clone git@github.com:giulia-berto/docker-tutorial.git``` and move inside the docker-tutorial directory ```cd docker-tutorial```.
 
-- The Dockerfile contains the instructions to create the container.
+- The Dockerfile contains the instructions to create the container. To have a working container, you need first to build the fsl image by running the following command
+```docker build --tag fsl:5.0 .
+```
