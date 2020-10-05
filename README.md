@@ -28,11 +28,13 @@ This message shows that your installation appears to be working correctly.
 ```
 docker build --tag fsl:5.0 .
 ```
+* Check if your image was correctly built by running ```docker image ls```.
+
 * Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replace ```/absolute/path/to/directory``` with your actual absolute path):
 ```
 docker run --rm -v /absolute/path/to/directory/docker-tutorial:/workdir -t fsl:5.0 /workdir/test
 ```
-  If the test passes successfully, you should see the following output:
+If the test passes successfully, you should see the following output:
 ```
 This is a test.
 /usr/share/fsl/5.0
