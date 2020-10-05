@@ -28,11 +28,11 @@ This message shows that your installation appears to be working correctly.
 ```
 docker build --tag fsl:5.0 .
 ```
-* Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replcae ```/absolute/path/to/directory``` with your actual absolute path):
+* Finally, you can start a container based on your new image. To test if it runs as expected, you can run the following command (be sure to replace ```/absolute/path/to/directory``` with your actual absolute path):
 ```
 docker run --rm -v /absolute/path/to/directory/docker-tutorial:/workdir -t fsl:5.0 /workdir/test
 ```
-  If the test passed successfully, you should see the following output:
+  If the test passes successfully, you should see the following output:
 ```
 This is a test.
 /usr/share/fsl/5.0
@@ -53,3 +53,7 @@ file_type      NIFTI-1+
 ```
 
 ### Step 3: Pull your image on Docker Hub
+
+The final step consists of sharing your image in [Docker Hub](https://hub.docker.com/) to let other users download and use it. If you don't have a Docker Hub ID, you can create one here: https://hub.docker.com/signup.
+
+* Next, create your first repository. Login in with your Docker Hub ID and push the button 'Create Repository'. Type the repository name as 'fsl'.
