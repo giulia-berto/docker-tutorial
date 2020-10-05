@@ -27,3 +27,4 @@ This message shows that your installation appears to be working correctly.
 - The Dockerfile contains the instructions to create the container. To have a working container, you need first to build the fsl image by running the following command
 ```docker build --tag fsl:5.0 .
 ```
+- Then, 
