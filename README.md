@@ -1,6 +1,23 @@
 # docker-tutorial
-Docker tutorial to build an FSL container
+Docker tutorial to build an FSL container.
 
-This simple tutorial is inspired by https://docs.docker.com/get-started/. Please refer to the resource for a more comprehensive documentation.
+This simple tutorial is inspired by https://docs.docker.com/get-started/. Please refer to that resource for a more comprehensive documentation.
 
 ### Step 1: Install docker
+
+If docker isn't already installed on your machine, plese refer to this guidelines to install it: https://docs.docker.com/engine/install/.
+
+To chek whether docker is correctly installed, from a terminal run ```docker --version``` (you need root permission, type ```sudo su``` to login as root).
+```
+$ docker --version
+Docker version 19.03.13, build 4484c46d9d 
+```
+To test wheter you installation works, from a terminal run ```docker run hello-world```.
+```
+$docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+
+### Step 2: Build and run your image
