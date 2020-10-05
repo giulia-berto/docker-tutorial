@@ -60,7 +60,7 @@ The final step consists of sharing your image in [Docker Hub](https://hub.docker
 
 * Now it's time to create your repository. Login in with your Docker Hub ID and push the button 'Create Repository'. Type the repository name as 'fsl'.
 
-* Name you image like ```<YourDockerHubID>/RepositoryName:RepositoryTag```. From a terminal run the following:
+* Name you image like ```<YourDockerHubID>/RepositoryName:RepositoryTag``` by running the following command:
 ```
 docker tag fsl:5.0 <YourDockerHubID>/fsl:5.0
 ```
