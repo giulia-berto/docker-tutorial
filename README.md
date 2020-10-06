@@ -1,7 +1,7 @@
 # docker-tutorial
 Docker tutorial to build an [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) container.
 
-This simple tutorial is inspired by https://docs.docker.com/get-started/. Please refer to that resource for a more comprehensive documentation.
+This simple tutorial is inspired by https://docs.docker.com/get-started/. Please refer to that resource for a more comprehensive documentation. The tutorial shows how to install FSL (FMRI Softwre Library on an Ubuntu machine).
 
 ### Step 1: Install docker
 
