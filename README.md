@@ -48,7 +48,7 @@ You can now run your container on your data by mounting your data folder using t
 
 * The following command will mount the current working directory, in which there is a nifti file called MNI152_T1_1.25mm_brain.nii.gz, and will run the command fslinfo on it through the docker container:
 ```
-docker run --rm -v `pwd`:/workdir -t fsl:5.0 /workdir/MNI152_T1_1.25mm_brain.nii.gz
+docker run --rm -v `pwd`:/workdir -t fsl:5.0 fslinfo /workdir/MNI152_T1_1.25mm_brain.nii.gz
 ```
 If the test passes successfully, you should see the following output:
 ```
