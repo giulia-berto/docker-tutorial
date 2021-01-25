@@ -30,7 +30,7 @@ This message shows that your installation appears to be working correctly.
 ```
 docker build --tag fsl:5.0 .
 ```
-* Check if your image was correctly built by running ```docker image ls``` and verify that the image fsl:5.0 is in the list.
+* Check if your image was correctly built by running ```docker image ls``` and by verifying that the image fsl:5.0 is in the list.
 
 
 ### Step 3: Test your container
@@ -44,14 +44,14 @@ FLIRT version 6.0
 
 ### Step 4: Mount your data and run your container
 
-* You can now run your container on your data by mounting your data folder using the flag -v. For example, the following command will mount the docker-tutorial folder, in which there is a nifti file called MNI152_T1_1.25mm_brain.nii.gz, and will run the test script called `test` through the docker container
-(be sure to replace ```/absolute/path/to/directory``` with your actual absolute path):
+You can now run your container on your data by mounting your data folder using the flag -v. In this tutorial we check that the command fslinfo on a nifti image runs as expected. 
+
+* The following command will mount the docker-tutorial folder, in which there is a nifti file called MNI152_T1_1.25mm_brain.nii.gz, and will run the command fslinfo on it through the docker container:
 ```
-docker run --rm -v /absolute/path/to/directory/docker-tutorial:/workdir -t fsl:5.0 /workdir/test
+docker run --rm -v `pwd`:/workdir -t fsl:5.0 /workdir/test
 ```
 If the test passes successfully, you should see the following output:
 ```
-This is a test.
 data_type      INT16
 dim1           145
 dim2           174
@@ -67,13 +67,13 @@ cal_min        0.0000
 file_type      NIFTI-1+
 ```
 
-### Step 3: Push your image to Docker Hub
+### Step 5: Push your image to Docker Hub
 
 The final step consists of sharing your image in [Docker Hub](https://hub.docker.com/) to let other users download and use it. If you don't have a Docker Hub ID, you can create one here: https://hub.docker.com/signup.
 
 * Now it's time to create your repository. Login in with your Docker Hub ID and push the button 'Create Repository'. Type the repository name as 'fsl'.
 
-* Name you image like ```<YourDockerHubID>/RepositoryName:RepositoryTag``` by running the following command:
+* Name you image like ```<YourDockerHubID>/RepositoryName:RepositoryTag``` by running the following command (usually the tag corresponds to the software version):
 ```
 docker tag fsl:5.0 <YourDockerHubID>/fsl:5.0
 ```
@@ -82,4 +82,13 @@ docker tag fsl:5.0 <YourDockerHubID>/fsl:5.0
 * Push your image to Docker Hub by running the following command:
 ```
 docker push <YourDockerHubID>/fsl:5.0
+```
+
+### Step 6: Updating your container
+
+At a certain point, you may need to update your container with a new software version. All you need to do is to replace the list of instructions contained in your Dockerfile (e.g. replacing 5.0 with 6.0), build the image (with a new tag), and push it to Docker Hub. In summary, after having modifying the Dockerfile, you would need to run something like the following:
+```
+docker build --tag fsl:6.0 .
+docker tag fsl:6.0 <YourDockerHubID>/fsl:6.0
+docker push <YourDockerHubID>/fsl:6.0
 ```
