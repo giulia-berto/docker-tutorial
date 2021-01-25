@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "This is a test."
-fslinfo '/workdir/MNI152_T1_1.25mm_brain.nii.gz'
