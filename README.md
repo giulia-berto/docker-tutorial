@@ -5,7 +5,7 @@ This simple tutorial is inspired by https://docs.docker.com/get-started/. Please
 
 ### Step 1: Install docker
 
-Important: to install and use docker commands you need root permission (from a terminal you can type ```sudo su``` to login as root, so you don't have to type your sudo password multiple times afterwards).
+Important: to install and use docker you need root permission (from a terminal you can type ```sudo su``` to login as root, so you don't have to type your sudo password multiple times afterwards).
 
 If docker isn't already installed on your machine, plese refer to these guidelines to install it: https://docs.docker.com/engine/install/.
 
@@ -44,11 +44,11 @@ FLIRT version 6.0
 
 ### Step 4: Mount your data and run your container
 
-You can now run your container on your data by mounting your data folder using the flag -v. In this tutorial we check that the command fslinfo on a nifti image runs as expected. 
+You can now run your container on your data by mounting your data folder using the flag -v. In this tutorial, we check that the command fslinfo on a nifti image runs as expected. 
 
-* The following command will mount the docker-tutorial folder, in which there is a nifti file called MNI152_T1_1.25mm_brain.nii.gz, and will run the command fslinfo on it through the docker container:
+* The following command will mount the current working directory, in which there is a nifti file called MNI152_T1_1.25mm_brain.nii.gz, and will run the command fslinfo on it through the docker container:
 ```
-docker run --rm -v `pwd`:/workdir -t fsl:5.0 /workdir/test
+docker run --rm -v `pwd`:/workdir -t fsl:5.0 /workdir/MNI152_T1_1.25mm_brain.nii.gz
 ```
 If the test passes successfully, you should see the following output:
 ```
@@ -86,7 +86,7 @@ docker push <YourDockerHubID>/fsl:5.0
 
 ### Step 6: Updating your container
 
-At a certain point, you may need to update your container with a new software version. All you need to do is to replace the list of instructions contained in your Dockerfile (e.g. replacing 5.0 with 6.0), build the image (with a new tag), and push it to Docker Hub. In summary, after having modifying the Dockerfile, you would need to run something like the following:
+At a certain point, you may need to update your container with a new software version. All you need to do is to replace the list of instructions in your Dockerfile (e.g. replacing 5.0 with 6.0), build the image (with a new tag), and push it to Docker Hub. In summary, after having modified the Dockerfile, you would need to run something like the following:
 ```
 docker build --tag fsl:6.0 .
 docker tag fsl:6.0 <YourDockerHubID>/fsl:6.0
