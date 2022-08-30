@@ -45,6 +45,10 @@ FLIRT version 6.0
 ```
 $ docker run -it --rm <YourDockerHubID>/RepositoryName:RepositoryTag pip show nibabel
 ```
+* Alternatively, you can check it using a python command:
+```
+$ docker run -it --rm <YourDockerHubID>/RepositoryName:RepositoryTag python3 -c "import nibabel; print(nibabel.__version__)"
+```
 
 ### Step 4: Mount your data and run your container
 
